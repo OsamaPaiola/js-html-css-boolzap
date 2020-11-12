@@ -1,0 +1,174 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    #009688 0%,
+    #009688 20%,
+    #d2dbdd 20%,
+    #d2dbdd 100%
+    );
+}
+
+/* UTILITY */
+li {
+  list-style-type: none;
+}
+
+/* LAYOUT */
+.container{
+  display: flex;
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+  background-color: white;
+}
+
+/* SECTION ASIDE */
+/* utente */
+.side{
+  flex-basis: 35%;
+  background-color: lightgrey;
+}
+
+.utente {
+  display: flex;
+  padding: 5px;
+  line-height: 35px;
+}
+
+.utente img {
+  height: 35px;
+  border-radius: 50%;
+  flex-basis: 10%;
+}
+
+.utente h5 {
+  margin: 0 5px;
+  flex-basis: 60%;
+
+}
+
+.utente ul {
+  display: flex;
+  flex-basis: 30%;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.utente ul li {
+  margin-left: 10px;
+}
+
+.utente ul li i {
+  color: gray;
+}
+
+/* notice */
+.notice  {
+ display: flex;
+ padding: 5px 10px;
+ background-color: #53e1f9;
+}
+
+.notice i {
+  padding: 7px ;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color: white;
+  color: #53e1f9;
+}
+
+.notice span {
+  margin-left: 10px;
+}
+
+.notice span p {
+  font-size: 12px;
+}
+
+.notice span a{
+  color: grey;
+  font-size: 11px;
+}
+
+/* new chat*/
+.new-chat{
+  padding: 5px 6px;
+  position: relative;
+}
+
+.new-chat input{
+  /* position: relative; */
+  width: 100%;
+  height: 25px;
+  border: 1px solid lightgrey;
+  padding-left: 45px;
+  font-size: 10px;
+}
+
+.new-chat i {
+  position: absolute;
+  font-size: 12px;
+  color: grey;
+  top: 12px;
+  left: 25px;
+}
+
+/* contacts */
+.contacts {
+  /* padding: 5px; */
+  background-color: white;
+}
+
+.contacts img {
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 7px;
+}
+
+.contacts li {
+  padding: 5px;
+  display: flex;
+  /* padding-bottom: 5px; */
+  border-bottom: 2px solid lightgrey;
+}
+
+.contacts li h5 {
+  line-height: 40px;
+  margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+/* section content */
+.content  {
+  flex-basis: 65%;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont-header,
+.cont-footer {
+background-color: yellow;
+}
+
+.cont-main {
+  flex-grow: 1;
+}
