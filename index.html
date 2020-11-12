@@ -19,9 +19,9 @@
 
         <div class="utente">
           <img src="./img/avatar_io.jpg" alt="">
-          <h5>Nome Utente</h5>
+          <h5> {{ user.name }}</h5>
           <ul>
-            <li>
+            <li v-for= "">
               <i class="far fa-circle"></i>
             </li>
             <li>
@@ -48,7 +48,11 @@
 
         <div class="contacts">
           <ul>
-            <li>
+            <li v-for = "(contact, index) in contacts">
+            <img :src=" './img/avatar' + contact.avatar + '.jpg' " alt="">
+              <h5> {{ contact.name }}</h5>
+            </li>
+            <!-- <li>
               <img src="./img/avatar_2.jpg" alt="">
               <h5>Michele</h5>
             </li>
@@ -63,11 +67,7 @@
             <li>
               <img src="./img/avatar_2.jpg" alt="">
               <h5>Michele</h5>
-            </li>
-            <li>
-              <img src="./img/avatar_2.jpg" alt="">
-              <h5>Michele</h5>
-            </li>
+            </li> -->
           </ul>
         </div>
 
@@ -102,7 +102,12 @@
         </section>
 
         <section class="cont-footer">
-          footer
+          <div class="to-type">
+            <i class="fas fa-smile"></i>
+            <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+            <i class="fas fa-microphone"></i>
+          </div>
+
         </section>
 
       </main>

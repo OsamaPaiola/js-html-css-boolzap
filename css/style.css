@@ -37,13 +37,14 @@ li {
 /* utente */
 .side{
   flex-basis: 35%;
-  background-color: lightgrey;
+  background-color: #e6eeed;
 }
 
 .utente {
   display: flex;
   padding: 5px;
   line-height: 35px;
+  background-color: lightgrey;
 }
 
 .utente img {
@@ -100,7 +101,7 @@ li {
   font-size: 11px;
 }
 
-/* new chat*/
+/* search new chat*/
 .new-chat{
   padding: 5px 6px;
   position: relative;
@@ -139,7 +140,7 @@ li {
   padding: 5px;
   display: flex;
   /* padding-bottom: 5px; */
-  border-bottom: 2px solid lightgrey;
+  border-bottom: 2px solid #e6eeed;
 }
 
 .contacts li h5 {
@@ -189,7 +190,7 @@ background-color: #d3d3d3;
 }
 
 .chat span p {
-  font-size: 11px;
+  font-size: 10px;
   color: grey;
 }
 
@@ -207,3 +208,28 @@ background-color: #d3d3d3;
   font-size: 14px;
   color: grey;
 }
+
+/* cont-main */
+
+/* cont-footer */
+.to-type{
+  padding: 8px;
+  display: flex;
+}
+
+.to-type  i {
+ flex-basis: 10%;
+ text-align: center;
+ line-height: 30px;
+ color: gray;
+}
+
+.to-type input {
+  flex-basis: 80%;
+  height: 30px;
+  border-radius: 3px;
+  border: none;
+  padding: 10px;
+  font-size: 10px;
+}
+#e6eeed
