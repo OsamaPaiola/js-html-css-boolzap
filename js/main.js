@@ -5,6 +5,7 @@ var app = new Vue({
     el: '#app',
     data: {
         // nostro account
+        indexContact: 0,
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -96,5 +97,12 @@ var app = new Vue({
             },
         ]
     },
-    methods: {}
+    methods: {
+      setContact(index){
+        this.indexContact = index;
+      },
+      foto(){
+        this.indexContact = 
+      }
+    }
 });

@@ -126,6 +126,7 @@ li {
 /* contacts */
 .contacts {
   background-color: white;
+  overflow-y: auto;
 }
 
 .contacts li:hover {
@@ -144,6 +145,10 @@ li {
   /* padding-bottom: 5px; */
   border-bottom: 2px solid #e6eeed;
   transition: background 0.3s;
+}
+
+.active{
+  background-color: #b3cac7;
 }
 
 .contacts li h5 {
@@ -213,6 +218,42 @@ background-color: #d3d3d3;
 }
 
 /* cont-main */
+.cont-main {
+  overflow-y: auto;
+}
+
+.cont-main .row{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.row span {
+  font-size: 8px;
+  position: relative;
+  left: 75%;
+}
+
+.riceived{
+  background-color: white;
+  margin-left: 25px;
+}
+
+.send {
+  background-color: #71f071;
+  margin-right: 25px;
+}
+
+
+
+.riceived,
+.send {
+  padding: 10px 25px;
+  font-size: 11px;
+  width: 40%;
+  border-radius: 13px;
+}
+
 
 /* cont-footer */
 .to-type{

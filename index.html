@@ -18,7 +18,7 @@
       <aside class="side">
 
         <div class="utente">
-          <img src="./img/avatar_io.jpg" alt="">
+          <img :src="'./img/avatar' + user.avatar + '.jpg' " :alt="user.name">
           <h5> {{ user.name }}</h5>
           <ul>
             <li v-for= "">
@@ -54,8 +54,11 @@
 
         <div class="contacts">
           <ul>
-            <li v-for = "(contact, index) in contacts">
-            <img :src=" './img/avatar' + contact.avatar + '.jpg' " alt="">
+            <li v-for = "(contact, index) in contacts"
+              @click= "setContact(index)"
+              :class= "(index == indexContact) ? 'active' : ''">
+              <img :src=" `./img/avatar${contact.avatar}.jpg`"
+              alt="contact.name">
               <h5> {{ contact.name }}</h5>
             </li>
           </ul>
@@ -67,7 +70,8 @@
 
         <section class="cont-header">
           <div class="chat">
-            <img src="./img/avatar_1.jpg" alt="">
+            <!-- <img :src="contacts[  indexContact" alt=""> -->
+            <!-- <img :src="`./img/avatar${contact.avatar}.jpg`" alt=""> -->
             <span>
               <h5>Michele</h5>
               <p>Ultimo accesso oggi alle 10.35</p>
@@ -95,7 +99,29 @@
           </div>
         </section>
 
+        <!-- cont-main -->
         <section class="cont-main">
+          <div v-for="" class="row">
+            <div class="riceived">
+              <p>ciao</p>
+              <span>10/01/2020 16:15</span>
+            </div>
+            <div class="send">
+              <p>ciao anche a te</p>
+              <span>10/01/2020 16:15</span>
+            </div>
+          </div>
+
+          <div v-for="" class="row">
+            <div class="riceived">
+              <p>ciao</p>
+              <span>10/01/2020 16:15</span>
+            </div>
+            <div class="send">
+              <p>Lorem ipsum dolor .</p>
+              <span>10/01/2020 16:15</span>
+            </div>
+          </div>
 
         </section>
 
