@@ -1,7 +1,7 @@
 /**
  * Boolzapp Vue
  */
-var app = new Vue({
+const app = new Vue({
     el: '#app',
     data: {
         // nostro account
@@ -52,7 +52,7 @@ var app = new Vue({
                     {
                         date: '20/03/2020 16:35:00',
                         message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'received'
+                        status: 'sent'
                     }
                 ],
             },
@@ -101,8 +101,5 @@ var app = new Vue({
       setContact(index){
         this.indexContact = index;
       },
-      foto(){
-        this.indexContact = 
-      }
     }
 });

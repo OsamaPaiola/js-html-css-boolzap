@@ -69,12 +69,11 @@
       <main class="content">
 
         <section class="cont-header">
-          <div class="chat">
-            <!-- <img :src="contacts[  indexContact" alt=""> -->
-            <!-- <img :src="`./img/avatar${contact.avatar}.jpg`" alt=""> -->
+          <div  class="chat" >
+            <img :src="'./img/avatar' + contacts[indexContact].avatar + '.jpg'" alt="">
             <span>
-              <h5>Michele</h5>
-              <p>Ultimo accesso oggi alle 10.35</p>
+              <h5>{{contacts[indexContact].name}}</h5>
+              <p>Ultimo accesso oggi alle 10:35</p>
             </span>
             <ul>
               <li>
@@ -101,18 +100,19 @@
 
         <!-- cont-main -->
         <section class="cont-main">
-          <div v-for="" class="row">
-            <div class="riceived">
-              <p>ciao</p>
-              <span>10/01/2020 16:15</span>
+          <div v-for="(message, index) in contacts[indexContact].messages"
+           class="row">
+            <div v-if="message.status == 'received'" class="riceived">
+              <p>{{message.message}}</p>
+              <span>{{message.date}}</span>
             </div>
-            <div class="send">
-              <p>ciao anche a te</p>
-              <span>10/01/2020 16:15</span>
+            <div v-else class="send">
+              <p>{{message.message}}</p>
+              <span>{{message.date}}</span>
             </div>
           </div>
 
-          <div v-for="" class="row">
+          <!-- <div v-for="" class="row">
             <div class="riceived">
               <p>ciao</p>
               <span>10/01/2020 16:15</span>
@@ -121,7 +121,7 @@
               <p>Lorem ipsum dolor .</p>
               <span>10/01/2020 16:15</span>
             </div>
-          </div>
+          </div> -->
 
         </section>
 
