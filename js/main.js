@@ -1,17 +1,20 @@
 /**
  * Boolzapp Vue
  */
+const day = dayjs().format('HH:mm:ss')
+
 const app = new Vue({
     el: '#app',
     data: {
         // nostro account
-        indexContact: 0,
-        sentMex: '',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
         },
+        indexContact: 0,
         intervalId: 0,
+        lastMexTime: '',
+        serchContact: '',
         // Elenco contatti
         contacts: [
             {
@@ -103,9 +106,17 @@ const app = new Vue({
       setContact(index){
         this.indexContact = index;
       },
+      answer(){
+        this.contacts[this.indexContact].messages.push({ message: 'ok!', status: 'received',
+        date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
+      },
       writeText(){
         if(this.sentMex.trim() !== ''){
-          this.contacts[this.indexContact].messages.push({ message: this.sentMex, date: dayjs().format('DD/MM/YYYY HH:mm:ss') });
+          this.contacts[this.indexContact].messages.push(
+            { message: this.sentMex.charAt(0).toUpperCase() + this.sentMex.slice(1),
+              status: 'sent',
+              date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          });
           this.intervalId = setTimeout(() => {
             this.answer();
           }, 1000);
@@ -114,10 +125,15 @@ const app = new Vue({
           sentMex = '';
         }
       },
-      answer(){
-        this.contacts[this.indexContact].messages.push({ message: 'ok!', status: 'received', date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
-      },
-
+      // selectContact(){
+      //   if(this.serchContact.trim() == this.contacts.name){
+      //     this.indexContact = index;
+      //   }
+      // }
     },
 
 });
+
+
+
+// this.lastMexTime = dayjs().format('HH:mm:ss')
