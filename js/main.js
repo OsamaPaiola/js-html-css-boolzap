@@ -6,10 +6,12 @@ const app = new Vue({
     data: {
         // nostro account
         indexContact: 0,
+        sentMex: '',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
         },
+        intervalId: 0,
         // Elenco contatti
         contacts: [
             {
@@ -31,7 +33,7 @@ const app = new Vue({
                         date: '10/01/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
-                    }
+                    },
                 ],
             },
             {
@@ -101,5 +103,21 @@ const app = new Vue({
       setContact(index){
         this.indexContact = index;
       },
-    }
+      writeText(){
+        if(this.sentMex.trim() !== ''){
+          this.contacts[this.indexContact].messages.push({ message: this.sentMex, date: dayjs().format('DD/MM/YYYY HH:mm:ss') });
+          this.intervalId = setTimeout(() => {
+            this.answer();
+          }, 1000);
+          this.sentMex='';
+        }else{
+          sentMex = '';
+        }
+      },
+      answer(){
+        this.contacts[this.indexContact].messages.push({ message: 'ok!', status: 'received', date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
+      },
+
+    },
+
 });

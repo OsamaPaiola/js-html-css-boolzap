@@ -48,7 +48,9 @@
         </div>
 
         <div class="new-chat">
-          <input type="search" name="" value="" placeholder="Cerca o inizia una nuva chat">
+          <input
+          type="text"
+          placeholder="Cerca o inizia una nuva chat">
           <i class="fas fa-search"></i>
         </div>
 
@@ -111,26 +113,21 @@
               <span>{{message.date}}</span>
             </div>
           </div>
-
-          <!-- <div v-for="" class="row">
-            <div class="riceived">
-              <p>ciao</p>
-              <span>10/01/2020 16:15</span>
-            </div>
-            <div class="send">
-              <p>Lorem ipsum dolor .</p>
-              <span>10/01/2020 16:15</span>
-            </div>
-          </div> -->
-
         </section>
 
+        <!-- cont-footer -->
         <section class="cont-footer">
           <div class="to-type">
             <a href="#">
-              <i class="fas fa-smile"></i>
+              <i class="far fa-smile"></i>
             </a>
-            <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+
+            <input @keyup.enter= "writeText"
+            v-model="sentMex"
+            type="text" name=""
+            value=""
+            placeholder="Scrivi un messaggio">
+
             <a href="#">
               <i class="fas fa-microphone"></i>
             </a>
@@ -145,6 +142,8 @@
 
 
     <!-- javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.6/dayjs.min.js">
+    </script>
     <script src="js/main.js"></script>
 
   </body>
