@@ -12,9 +12,9 @@ const app = new Vue({
             avatar: '_io'
         },
         indexContact: 0,
-        intervalId: 0,
         sentMex: '',
         searchContact: '',
+        // online:'',
         // Elenco contatti
         contacts: [
             {
@@ -123,10 +123,12 @@ const app = new Vue({
               status: 'sent',
               date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           });
-          this.intervalId = setTimeout(() => {
+          setTimeout(() => {
             this.answer();
+            this.contacts[this.indexContact].online = dayjs().format('HH:mm:ss');
           }, 1000);
           this.sentMex='';
+
         }else{
           sentMex = '';
         }
