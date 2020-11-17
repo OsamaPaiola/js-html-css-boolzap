@@ -13,8 +13,8 @@ const app = new Vue({
         },
         indexContact: 0,
         intervalId: 0,
-        lastMexTime: '',
-        serchContact: '',
+        sentMex: '',
+        searchContact: '',
         // Elenco contatti
         contacts: [
             {
@@ -103,17 +103,23 @@ const app = new Vue({
         ]
     },
     methods: {
+      // set index contact
       setContact(index){
         this.indexContact = index;
       },
+      // risposta automatica
       answer(){
-        this.contacts[this.indexContact].messages.push({ message: 'ok!', status: 'received',
-        date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
+        this.contacts[this.indexContact].messages.push(
+          { message: 'Ok!',
+            status: 'received',
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss')
+          });
       },
+      // invio mex + risposta automatica
       writeText(){
         if(this.sentMex.trim() !== ''){
           this.contacts[this.indexContact].messages.push(
-            { message: this.sentMex.charAt(0).toUpperCase() + this.sentMex.slice(1),
+            {  message: this.sentMex.charAt(0).toUpperCase() +       this.sentMex.slice(1),
               status: 'sent',
               date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           });
@@ -125,15 +131,17 @@ const app = new Vue({
           sentMex = '';
         }
       },
-      // selectContact(){
-      //   if(this.serchContact.trim() == this.contacts.name){
-      //     this.indexContact = index;
-      //   }
-      // }
+      // filtra contatto
+      filteredList(){
+        this.contacts.forEach(contact => {
+          const name = contact.name.toLowerCase();
+          if ((name.includes(this.searchContact.toLowerCase().trim())) || (this.searchContact == '')) {
+            contact.visible = true;
+          }
+          else {
+            contact.visible = false;
+          }
+        });
+      },
     },
-
 });
-
-
-
-// this.lastMexTime = dayjs().format('HH:mm:ss')

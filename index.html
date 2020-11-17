@@ -49,6 +49,8 @@
 
         <div class="new-chat">
           <input
+          v-model="searchContact"
+          @keyup = "filteredList"
           type="text"
           placeholder="Cerca o inizia una nuva chat">
           <i class="fas fa-search"></i>
@@ -56,7 +58,8 @@
 
         <div class="contacts">
           <ul>
-            <li v-for = "(contact, index) in contacts"
+            <li v-show="contact.visible == true"
+             v-for = "(contact, index) in contacts"
               @click= "setContact(index)"
               :class= "(index == indexContact) ? 'active' : ''">
               <img :src=" `./img/avatar${contact.avatar}.jpg`"
@@ -76,6 +79,7 @@
             <span>
               <h5>{{contacts[indexContact].name}}</h5>
               <p>Ultimo accesso oggi alle </p>
+
             </span>
             <ul>
               <li>
